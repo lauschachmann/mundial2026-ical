@@ -47,7 +47,7 @@ const PARTIDOS_GRUPO = [
   // SAB 20 JUN
   { uid:"g33", s:"20260620T170000Z", e:"20260620T190000Z", local:"Paises Bajos",     visit:"Suecia",           grupo:"F", j:2, estadio:"NRG Stadium, Houston" },                   // 14:00 ARG
   { uid:"g34", s:"20260620T200000Z", e:"20260620T220000Z", local:"Alemania",         visit:"Costa de Marfil",  grupo:"E", j:2, estadio:"BMO Field, Toronto" },                     // 17:00 ARG
-  { uid:"g35", s:"20260621T000000Z", e:"20260621T020000Z", local:"Ecuador",          visit:"Curazao",          grupo:"E", j:2, estadio:"Arrowhead Stadium, Kansas City" },         // 23:00 ARG
+  { uid:"g35", s:"20260621T020000Z", e:"20260621T040000Z", local:"Ecuador",          visit:"Curazao",          grupo:"E", j:2, estadio:"Arrowhead Stadium, Kansas City" },         // 23:00 ARG
   { uid:"g36", s:"20260621T040000Z", e:"20260621T060000Z", local:"Tunez",            visit:"Japon",            grupo:"F", j:2, estadio:"Estadio BBVA, Monterrey" },                // 01:00 ARG dom
   // DOM 21 JUN
   { uid:"g37", s:"20260621T160000Z", e:"20260621T180000Z", local:"Espana",           visit:"Arabia Saudita",   grupo:"H", j:2, estadio:"Mercedes-Benz Stadium, Atlanta" },         // 13:00 ARG
