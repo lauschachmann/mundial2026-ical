@@ -78,42 +78,41 @@ const PARTIDOS_GRUPO = [
   { uid:"g72", s:"20260627T230000", e:"20260628T010000", local:"Jordania",         visit:"Argentina",        grupo:"J", j:3, estadio:"AT&T Stadium, Dallas", arg:true },
 ];
 
+// 16avos de final - equipos confirmados, fuente: La Nacion / Infobae / Excelsior (28 jun 2026)
 const ELIMINATORIOS = [
-  // 16avos - fuente: El Destape / horario ARG
-  { uid:"r01", s:"20260628T160000", e:"20260628T180000", label:"16avos", desc:"2 Grupo A vs 2 Grupo B",          estadio:"Por confirmar" },           // dom 28 jun 16:00
-  { uid:"r02", s:"20260628T200000", e:"20260628T220000", label:"16avos", desc:"1 Grupo C vs 3 Grupo DEF",        estadio:"Por confirmar" },           // dom 28 jun 20:00
-  { uid:"r03", s:"20260629T140000", e:"20260629T160000", label:"16avos", desc:"1 Grupo E vs 2 Grupo F",          estadio:"Por confirmar" },           // lun 29 jun 14:00
-  { uid:"r04", s:"20260629T173000", e:"20260629T193000", label:"16avos", desc:"1 Grupo E vs Mejor Tercero",      estadio:"Por confirmar" },           // lun 29 jun 17:30
-  { uid:"r05", s:"20260629T220000", e:"20260630T000000", label:"16avos", desc:"1 Grupo F vs 2 Grupo C",          estadio:"Por confirmar" },           // lun 29 jun 22:00
-  { uid:"r06", s:"20260630T140000", e:"20260630T160000", label:"16avos", desc:"2 Grupo E vs 2 Grupo I",          estadio:"Por confirmar" },           // mar 30 jun 14:00
-  { uid:"r07", s:"20260630T180000", e:"20260630T200000", label:"16avos", desc:"1 Grupo I vs Mejor Tercero",      estadio:"Por confirmar" },           // mar 30 jun 18:00
-  { uid:"r08", s:"20260630T220000", e:"20260701T000000", label:"16avos", desc:"1 Grupo A vs Mejor Tercero",      estadio:"Por confirmar" },           // mar 30 jun 22:00
-  { uid:"r09", s:"20260701T130000", e:"20260701T150000", label:"16avos", desc:"1 Grupo L vs Mejor Tercero",      estadio:"Por confirmar" },           // mie 1 jul 13:00
-  { uid:"r10", s:"20260701T170000", e:"20260701T190000", label:"16avos", desc:"1 Grupo G vs 3 Grupo AEHIJ",      estadio:"Por confirmar" },           // mie 1 jul 17:00
-  { uid:"r11", s:"20260701T210000", e:"20260701T230000", label:"16avos", desc:"1 Grupo D vs 3 Grupo BEFIJ",      estadio:"Por confirmar" },           // mie 1 jul 21:00
-  { uid:"r12", s:"20260702T160000", e:"20260702T180000", label:"16avos", desc:"2 Grupo K vs 2 Grupo L",          estadio:"Por confirmar" },           // jue 2 jul 14:00 → 16 ARG? verificar
-  { uid:"r13", s:"20260702T180000", e:"20260702T200000", label:"16avos", desc:"1 Grupo H vs 2 Grupo J",          estadio:"Por confirmar" },           // jue 2 jul 18:00
-  { uid:"r14", s:"20260702T220000", e:"20260703T000000", label:"16avos", desc:"1 Grupo B vs 3 Grupo EFGIJ",      estadio:"Por confirmar" },           // jue 2 jul 22:00
-  { uid:"r15", s:"20260703T150000", e:"20260703T170000", label:"16avos", desc:"2 Grupo D vs 2 Grupo G",          estadio:"Por confirmar" },           // vie 3 jul 15:00
-  { uid:"r16", s:"20260703T190000", e:"20260703T210000", label:"16avos", desc:"1 Grupo J vs 2 Grupo H",          estadio:"Por confirmar" },           // vie 3 jul 19:00
-  { uid:"r17", s:"20260703T223000", e:"20260704T003000", label:"16avos", desc:"1 Grupo K vs 3 Grupo DEIJL",      estadio:"Por confirmar" },           // vie 3 jul 22:30
-  // Octavos
-  { uid:"r18", s:"20260704T140000", e:"20260704T160000", label:"Octavos", desc:"W73 vs W75",    estadio:"Por confirmar" },  // sab 4 jul 14:00
-  { uid:"r19", s:"20260704T180000", e:"20260704T200000", label:"Octavos", desc:"W74 vs W77",    estadio:"Por confirmar" },  // sab 4 jul 18:00
-  { uid:"r20", s:"20260705T170000", e:"20260705T190000", label:"Octavos", desc:"W76 vs W78",    estadio:"Por confirmar" },  // dom 5 jul 17:00
-  { uid:"r21", s:"20260705T210000", e:"20260705T230000", label:"Octavos", desc:"W79 vs W80",    estadio:"Por confirmar" },  // dom 5 jul 21:00
-  { uid:"r22", s:"20260706T160000", e:"20260706T180000", label:"Octavos", desc:"W83 vs W84",    estadio:"Por confirmar" },  // lun 6 jul 16:00
-  { uid:"r23", s:"20260706T210000", e:"20260706T230000", label:"Octavos", desc:"W81 vs W82",    estadio:"Por confirmar" },  // lun 6 jul 21:00
-  { uid:"r24", s:"20260707T130000", e:"20260707T150000", label:"Octavos", desc:"W86 vs W88",    estadio:"Por confirmar" },  // mar 7 jul 13:00
-  { uid:"r25", s:"20260707T170000", e:"20260707T190000", label:"Octavos", desc:"W85 vs W87",    estadio:"Por confirmar" },  // mar 7 jul 17:00
+  { uid:"r01", s:"20260628T160000", e:"20260628T180000", label:"16avos", desc:"Sudafrica vs Canada",            estadio:"SoFi Stadium, Los Angeles" },           // dom 28 jun 16:00
+  { uid:"r02", s:"20260629T140000", e:"20260629T160000", label:"16avos", desc:"Brasil vs Japon",                 estadio:"NRG Stadium, Houston" },                // lun 29 jun 14:00
+  { uid:"r03", s:"20260629T173000", e:"20260629T193000", label:"16avos", desc:"Alemania vs Paraguay",            estadio:"Gillette Stadium, Boston" },            // lun 29 jun 17:30
+  { uid:"r04", s:"20260629T220000", e:"20260630T000000", label:"16avos", desc:"Paises Bajos vs Marruecos",       estadio:"Estadio BBVA, Monterrey" },             // lun 29 jun 22:00
+  { uid:"r05", s:"20260630T140000", e:"20260630T160000", label:"16avos", desc:"Costa de Marfil vs Noruega",      estadio:"AT&T Stadium, Dallas" },                // mar 30 jun 14:00
+  { uid:"r06", s:"20260630T180000", e:"20260630T200000", label:"16avos", desc:"Francia vs Suecia",               estadio:"MetLife Stadium, Nueva Jersey" },       // mar 30 jun 18:00
+  { uid:"r07", s:"20260630T220000", e:"20260701T000000", label:"16avos", desc:"Mexico vs Ecuador",               estadio:"Estadio Azteca, Ciudad de Mexico" },    // mar 30 jun 22:00
+  { uid:"r08", s:"20260701T130000", e:"20260701T150000", label:"16avos", desc:"Inglaterra vs RD Congo",          estadio:"Mercedes-Benz Stadium, Atlanta" },      // mie 1 jul 13:00
+  { uid:"r09", s:"20260701T170000", e:"20260701T190000", label:"16avos", desc:"Portugal vs Croacia",          estadio:"Lumen Field, Seattle" },                // mie 1 jul 17:00
+  { uid:"r10", s:"20260701T210000", e:"20260701T230000", label:"16avos", desc:"Estados Unidos vs Bosnia y Herz.",estadio:"Levis Stadium, San Francisco" },        // mie 1 jul 21:00
+  { uid:"r11", s:"20260702T140000", e:"20260702T160000", label:"16avos", desc:"Belgica vs Senegal",          estadio:"BMO Field, Toronto" },                  // jue 2 jul 14:00
+  { uid:"r12", s:"20260702T180000", e:"20260702T200000", label:"16avos", desc:"Espana vs Austria",              estadio:"SoFi Stadium, Los Angeles" },           // jue 2 jul 18:00
+  { uid:"r13", s:"20260702T220000", e:"20260703T000000", label:"16avos", desc:"Suiza vs Argelia",                estadio:"BC Place, Vancouver" },                 // jue 2 jul 22:00
+  { uid:"r14", s:"20260703T150000", e:"20260703T170000", label:"16avos", desc:"Australia vs Egipto",             estadio:"AT&T Stadium, Dallas" },               // vie 3 jul 15:00
+  { uid:"r15", s:"20260703T190000", e:"20260703T210000", label:"16avos", desc:"🇦🇷 ARG: Argentina vs Cabo Verde", estadio:"Hard Rock Stadium, Miami", arg:true }, // vie 3 jul 19:00
+  { uid:"r16", s:"20260703T223000", e:"20260704T003000", label:"16avos", desc:"Colombia vs Ghana",                estadio:"Arrowhead Stadium, Kansas City" },     // vie 3 jul 22:30
+  // Octavos (cruces exactos se actualizan a medida que se confirman)
+  { uid:"r17", s:"20260704T140000", e:"20260704T160000", label:"Octavos", desc:"Ganador 16avos 1 vs Ganador 16avos 3", estadio:"NRG Stadium, Houston" },                // sab 4 jul ~14:00
+  { uid:"r18", s:"20260704T180000", e:"20260704T200000", label:"Octavos", desc:"Ganador 16avos 2 vs Ganador 16avos 5", estadio:"Lincoln Financial Field, Philadelphia" },// sab 4 jul ~18:00
+  { uid:"r19", s:"20260705T170000", e:"20260705T190000", label:"Octavos", desc:"Ganador 16avos 4 vs Ganador 16avos 6", estadio:"MetLife Stadium, Nueva Jersey" },       // dom 5 jul ~17:00
+  { uid:"r20", s:"20260705T210000", e:"20260705T230000", label:"Octavos", desc:"Ganador 16avos 7 vs Ganador 16avos 8", estadio:"Estadio Azteca, Ciudad de Mexico" },    // dom 5 jul ~21:00
+  { uid:"r21", s:"20260706T160000", e:"20260706T180000", label:"Octavos", desc:"Ganador 16avos 11 vs Ganador 16avos 12", estadio:"AT&T Stadium, Dallas" },              // lun 6 jul ~16:00
+  { uid:"r22", s:"20260706T210000", e:"20260706T230000", label:"Octavos", desc:"Ganador 16avos 9 vs Ganador 16avos 10",  estadio:"Levis Stadium, San Francisco" },       // lun 6 jul ~21:00
+  { uid:"r23", s:"20260707T130000", e:"20260707T150000", label:"Octavos", desc:"🇦🇷 Posible ARG: Ganador 16avos 15 vs Ganador 16avos 14", estadio:"Mercedes-Benz Stadium, Atlanta" }, // mar 7 jul 13:00
+  { uid:"r24", s:"20260707T170000", e:"20260707T190000", label:"Octavos", desc:"Ganador 16avos 13 vs Ganador 16avos 16", estadio:"BC Place, Vancouver" },               // mar 7 jul ~17:00
   // Cuartos
-  { uid:"r26", s:"20260709T170000", e:"20260709T190000", label:"Cuartos", desc:"W89 vs W90",    estadio:"Por confirmar" },  // jue 9 jul 17:00
-  { uid:"r27", s:"20260710T160000", e:"20260710T180000", label:"Cuartos", desc:"W93 vs W94",    estadio:"Por confirmar" },  // vie 10 jul 16:00
-  { uid:"r28", s:"20260711T180000", e:"20260711T200000", label:"Cuartos", desc:"W91 vs W92",    estadio:"Por confirmar" },  // sab 11 jul 18:00
-  { uid:"r29", s:"20260711T220000", e:"20260712T000000", label:"Cuartos", desc:"W95 vs W96",    estadio:"Por confirmar" },  // sab 11 jul 22:00
+  { uid:"r25", s:"20260709T170000", e:"20260709T190000", label:"Cuartos", desc:"Ganador Octavos 1 vs Ganador Octavos 2",    estadio:"Por confirmar" },  // jue 9 jul 17:00
+  { uid:"r26", s:"20260710T160000", e:"20260710T180000", label:"Cuartos", desc:"Ganador Octavos 3 vs Ganador Octavos 4",    estadio:"Por confirmar" },  // vie 10 jul 16:00
+  { uid:"r27", s:"20260711T180000", e:"20260711T200000", label:"Cuartos", desc:"🇦🇷 Posible ARG: Ganador Octavos 5 vs Ganador Octavos 6", estadio:"Arrowhead Stadium, Kansas City" },  // sab 11 jul 18:00
+  { uid:"r28", s:"20260711T220000", e:"20260712T000000", label:"Cuartos", desc:"Ganador Octavos 7 vs Ganador Octavos 8",    estadio:"Por confirmar" },  // sab 11 jul 22:00
   // Semis
-  { uid:"r30", s:"20260714T160000", e:"20260714T180000", label:"SEMIFINAL", desc:"W97 vs W98",  estadio:"Por confirmar" },  // mar 14 jul 16:00
-  { uid:"r31", s:"20260715T160000", e:"20260715T180000", label:"SEMIFINAL", desc:"W99 vs W100", estadio:"Por confirmar" },  // mie 15 jul 16:00
+  { uid:"r29", s:"20260714T160000", e:"20260714T180000", label:"SEMIFINAL", desc:"Ganador Cuartos 1 vs Ganador Cuartos 2",  estadio:"Por confirmar" },  // mar 14 jul 16:00
+  { uid:"r30", s:"20260715T160000", e:"20260715T180000", label:"SEMIFINAL", desc:"🇦🇷 Posible ARG: Ganador Cuartos 3 vs Ganador Cuartos 4", estadio:"Mercedes-Benz Stadium, Atlanta" },  // mie 15 jul 16:00
   // 3er puesto y Final
   { uid:"r32", s:"20260718T180000", e:"20260718T200000", label:"Tercer Puesto", desc:"Perdedor Semi1 vs Perdedor Semi2", estadio:"Hard Rock Stadium, Miami" },    // sab 18 jul 18:00
   { uid:"r33", s:"20260719T160000", e:"20260719T180000", label:"FINAL MUNDIAL 2026", desc:"Campeones Semi1 vs Semi2",    estadio:"MetLife Stadium, Nueva Jersey" }, // dom 19 jul 16:00
