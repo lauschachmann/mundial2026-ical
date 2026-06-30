@@ -1,5 +1,6 @@
 // Mundial 2026 - Calendario dinamico para iCal
 // Horarios en hora Argentina (America/Argentina/Buenos_Aires)
+// Fuente: FIFA oficial (hora sede +1 = hora ARG) - verificado 30 jun 2026
 
 const TZ = "America/Argentina/Buenos_Aires";
 
@@ -78,44 +79,45 @@ const PARTIDOS_GRUPO = [
   { uid:"g72", s:"20260627T230000", e:"20260628T010000", local:"Jordania",         visit:"Argentina",        grupo:"J", j:3, estadio:"AT&T Stadium, Dallas", arg:true },
 ];
 
-// 16avos de final - equipos confirmados, fuente: La Nacion / Infobae / Excelsior (28 jun 2026)
+// Fase eliminatoria - fuente FIFA oficial (hora sede +1 = hora ARG)
 const ELIMINATORIOS = [
-  { uid:"r01", s:"20260628T160000", e:"20260628T180000", label:"16avos", desc:"Sudafrica vs Canada",            estadio:"SoFi Stadium, Los Angeles" },           // dom 28 jun 16:00
-  { uid:"r02", s:"20260629T140000", e:"20260629T160000", label:"16avos", desc:"Brasil vs Japon",                 estadio:"NRG Stadium, Houston" },                // lun 29 jun 14:00
-  { uid:"r03", s:"20260629T173000", e:"20260629T193000", label:"16avos", desc:"Alemania vs Paraguay",            estadio:"Gillette Stadium, Boston" },            // lun 29 jun 17:30
-  { uid:"r04", s:"20260629T220000", e:"20260630T000000", label:"16avos", desc:"Paises Bajos vs Marruecos",       estadio:"Estadio BBVA, Monterrey" },             // lun 29 jun 22:00
-  { uid:"r05", s:"20260630T140000", e:"20260630T160000", label:"16avos", desc:"Costa de Marfil vs Noruega",      estadio:"AT&T Stadium, Dallas" },                // mar 30 jun 14:00
-  { uid:"r06", s:"20260630T180000", e:"20260630T200000", label:"16avos", desc:"Francia vs Suecia",               estadio:"MetLife Stadium, Nueva Jersey" },       // mar 30 jun 18:00
-  { uid:"r07", s:"20260630T220000", e:"20260701T000000", label:"16avos", desc:"Mexico vs Ecuador",               estadio:"Estadio Azteca, Ciudad de Mexico" },    // mar 30 jun 22:00
-  { uid:"r08", s:"20260701T130000", e:"20260701T150000", label:"16avos", desc:"Inglaterra vs RD Congo",          estadio:"Mercedes-Benz Stadium, Atlanta" },      // mie 1 jul 13:00
-  { uid:"r09", s:"20260701T170000", e:"20260701T190000", label:"16avos", desc:"Portugal vs Croacia",          estadio:"Lumen Field, Seattle" },                // mie 1 jul 17:00
-  { uid:"r10", s:"20260701T210000", e:"20260701T230000", label:"16avos", desc:"Estados Unidos vs Bosnia y Herz.",estadio:"Levis Stadium, San Francisco" },        // mie 1 jul 21:00
-  { uid:"r11", s:"20260702T140000", e:"20260702T160000", label:"16avos", desc:"Belgica vs Senegal",          estadio:"BMO Field, Toronto" },                  // jue 2 jul 14:00
-  { uid:"r12", s:"20260702T180000", e:"20260702T200000", label:"16avos", desc:"Espana vs Austria",              estadio:"SoFi Stadium, Los Angeles" },           // jue 2 jul 18:00
-  { uid:"r13", s:"20260702T220000", e:"20260703T000000", label:"16avos", desc:"Suiza vs Argelia",                estadio:"BC Place, Vancouver" },                 // jue 2 jul 22:00
-  { uid:"r14", s:"20260703T150000", e:"20260703T170000", label:"16avos", desc:"Australia vs Egipto",             estadio:"AT&T Stadium, Dallas" },               // vie 3 jul 15:00
-  { uid:"r15", s:"20260703T190000", e:"20260703T210000", label:"16avos", desc:"🇦🇷 ARG: Argentina vs Cabo Verde", estadio:"Hard Rock Stadium, Miami", arg:true }, // vie 3 jul 19:00
-  { uid:"r16", s:"20260703T223000", e:"20260704T003000", label:"16avos", desc:"Colombia vs Ghana",                estadio:"Arrowhead Stadium, Kansas City" },     // vie 3 jul 22:30
-  // Octavos (cruces exactos se actualizan a medida que se confirman)
-  { uid:"r17", s:"20260704T140000", e:"20260704T160000", label:"Octavos", desc:"Ganador 16avos 1 vs Ganador 16avos 3", estadio:"NRG Stadium, Houston" },                // sab 4 jul ~14:00
-  { uid:"r18", s:"20260704T180000", e:"20260704T200000", label:"Octavos", desc:"Ganador 16avos 2 vs Ganador 16avos 5", estadio:"Lincoln Financial Field, Philadelphia" },// sab 4 jul ~18:00
-  { uid:"r19", s:"20260705T170000", e:"20260705T190000", label:"Octavos", desc:"Ganador 16avos 4 vs Ganador 16avos 6", estadio:"MetLife Stadium, Nueva Jersey" },       // dom 5 jul ~17:00
-  { uid:"r20", s:"20260705T210000", e:"20260705T230000", label:"Octavos", desc:"Ganador 16avos 7 vs Ganador 16avos 8", estadio:"Estadio Azteca, Ciudad de Mexico" },    // dom 5 jul ~21:00
-  { uid:"r21", s:"20260706T160000", e:"20260706T180000", label:"Octavos", desc:"Ganador 16avos 11 vs Ganador 16avos 12", estadio:"AT&T Stadium, Dallas" },              // lun 6 jul ~16:00
-  { uid:"r22", s:"20260706T210000", e:"20260706T230000", label:"Octavos", desc:"Ganador 16avos 9 vs Ganador 16avos 10",  estadio:"Levis Stadium, San Francisco" },       // lun 6 jul ~21:00
-  { uid:"r23", s:"20260707T130000", e:"20260707T150000", label:"Octavos", desc:"🇦🇷 Posible ARG: Ganador 16avos 15 vs Ganador 16avos 14", estadio:"Mercedes-Benz Stadium, Atlanta" }, // mar 7 jul 13:00
-  { uid:"r24", s:"20260707T170000", e:"20260707T190000", label:"Octavos", desc:"Ganador 16avos 13 vs Ganador 16avos 16", estadio:"BC Place, Vancouver" },               // mar 7 jul ~17:00
-  // Cuartos
-  { uid:"r25", s:"20260709T170000", e:"20260709T190000", label:"Cuartos", desc:"Ganador Octavos 1 vs Ganador Octavos 2",    estadio:"Por confirmar" },  // jue 9 jul 17:00
-  { uid:"r26", s:"20260710T160000", e:"20260710T180000", label:"Cuartos", desc:"Ganador Octavos 3 vs Ganador Octavos 4",    estadio:"Por confirmar" },  // vie 10 jul 16:00
-  { uid:"r27", s:"20260711T180000", e:"20260711T200000", label:"Cuartos", desc:"🇦🇷 Posible ARG: Ganador Octavos 5 vs Ganador Octavos 6", estadio:"Arrowhead Stadium, Kansas City" },  // sab 11 jul 18:00
-  { uid:"r28", s:"20260711T220000", e:"20260712T000000", label:"Cuartos", desc:"Ganador Octavos 7 vs Ganador Octavos 8",    estadio:"Por confirmar" },  // sab 11 jul 22:00
-  // Semis
-  { uid:"r29", s:"20260714T160000", e:"20260714T180000", label:"SEMIFINAL", desc:"Ganador Cuartos 1 vs Ganador Cuartos 2",  estadio:"Por confirmar" },  // mar 14 jul 16:00
-  { uid:"r30", s:"20260715T160000", e:"20260715T180000", label:"SEMIFINAL", desc:"🇦🇷 Posible ARG: Ganador Cuartos 3 vs Ganador Cuartos 4", estadio:"Mercedes-Benz Stadium, Atlanta" },  // mie 15 jul 16:00
+  // 16avos
+  { uid:"r01", s:"20260628T160000", e:"20260628T180000", label:"16avos", desc:"Sudafrica vs Canada",             estadio:"SoFi Stadium, Los Angeles" },           // dom 28/6 16:00
+  { uid:"r02", s:"20260629T140000", e:"20260629T160000", label:"16avos", desc:"Brasil vs Japon",                  estadio:"NRG Stadium, Houston" },                // lun 29/6 14:00
+  { uid:"r03", s:"20260629T173000", e:"20260629T193000", label:"16avos", desc:"Alemania vs Paraguay",             estadio:"Gillette Stadium, Boston" },            // lun 29/6 17:30
+  { uid:"r04", s:"20260629T220000", e:"20260630T000000", label:"16avos", desc:"Paises Bajos vs Marruecos",        estadio:"Estadio BBVA, Monterrey" },             // lun 29/6 22:00
+  { uid:"r05", s:"20260630T140000", e:"20260630T160000", label:"16avos", desc:"Costa de Marfil vs Noruega",       estadio:"AT&T Stadium, Dallas" },                // mar 30/6 14:00
+  { uid:"r06", s:"20260630T180000", e:"20260630T200000", label:"16avos", desc:"Francia vs Suecia",                estadio:"MetLife Stadium, Nueva Jersey" },       // mar 30/6 18:00
+  { uid:"r07", s:"20260630T220000", e:"20260701T000000", label:"16avos", desc:"Mexico vs Ecuador",                estadio:"Estadio Azteca, Ciudad de Mexico" },    // mar 30/6 22:00
+  { uid:"r08", s:"20260701T130000", e:"20260701T150000", label:"16avos", desc:"Inglaterra vs RD Congo",           estadio:"Mercedes-Benz Stadium, Atlanta" },      // mie 1/7 13:00
+  { uid:"r09", s:"20260701T170000", e:"20260701T190000", label:"16avos", desc:"Belgica vs Senegal",               estadio:"Lumen Field, Seattle" },                // mie 1/7 17:00
+  { uid:"r10", s:"20260701T210000", e:"20260701T230000", label:"16avos", desc:"Estados Unidos vs Bosnia y Herz.", estadio:"Levis Stadium, San Francisco" },        // mie 1/7 21:00
+  { uid:"r11", s:"20260702T200000", e:"20260702T220000", label:"16avos", desc:"Portugal vs Croacia",              estadio:"BMO Field, Toronto" },                  // jue 2/7 20:00
+  { uid:"r12", s:"20260702T160000", e:"20260702T180000", label:"16avos", desc:"Espana vs Austria",                estadio:"SoFi Stadium, Los Angeles" },           // jue 2/7 16:00
+  { uid:"r13", s:"20260703T000000", e:"20260703T020000", label:"16avos", desc:"Suiza vs Argelia",                 estadio:"BC Place, Vancouver" },                 // jue 2/7 24:00 (= 3/7 00:00)
+  { uid:"r14", s:"20260703T150000", e:"20260703T170000", label:"16avos", desc:"Australia vs Egipto",              estadio:"AT&T Stadium, Dallas" },                // vie 3/7 15:00
+  { uid:"r15", s:"20260703T190000", e:"20260703T210000", label:"16avos", desc:"🇦🇷 ARG: Argentina vs Cabo Verde", estadio:"Hard Rock Stadium, Miami", arg:true },  // vie 3/7 19:00
+  { uid:"r16", s:"20260703T223000", e:"20260704T003000", label:"16avos", desc:"Colombia vs Ghana",                estadio:"Arrowhead Stadium, Kansas City" },      // vie 3/7 22:30
+  // Octavos (fuente FIFA oficial)
+  { uid:"r17", s:"20260704T180000", e:"20260704T200000", label:"Octavos", desc:"Paraguay vs W Francia/Suecia",            estadio:"Lincoln Financial Field, Philadelphia" }, // sab 4/7 18:00
+  { uid:"r18", s:"20260704T140000", e:"20260704T160000", label:"Octavos", desc:"Canada vs Marruecos",                     estadio:"NRG Stadium, Houston" },                   // sab 4/7 14:00
+  { uid:"r19", s:"20260705T170000", e:"20260705T190000", label:"Octavos", desc:"Brasil vs Noruega",                       estadio:"MetLife Stadium, Nueva Jersey" },          // dom 5/7 17:00
+  { uid:"r20", s:"20260705T210000", e:"20260705T230000", label:"Octavos", desc:"W Mexico/Ecuador vs W Inglaterra/RD Congo",estadio:"Estadio Azteca, Ciudad de Mexico" },     // dom 5/7 21:00
+  { uid:"r21", s:"20260706T160000", e:"20260706T180000", label:"Octavos", desc:"W Portugal/Croacia vs W Espana/Austria",  estadio:"AT&T Stadium, Dallas" },                   // lun 6/7 16:00
+  { uid:"r22", s:"20260706T210000", e:"20260706T230000", label:"Octavos", desc:"W Belgica/Senegal vs W EEUU/Bosnia",      estadio:"Lumen Field, Seattle" },                   // lun 6/7 21:00
+  { uid:"r23", s:"20260707T130000", e:"20260707T150000", label:"Octavos", desc:"🇦🇷 W Argentina/Cabo Verde vs W Australia/Egipto", estadio:"Mercedes-Benz Stadium, Atlanta", arg:true }, // mar 7/7 13:00
+  { uid:"r24", s:"20260707T170000", e:"20260707T190000", label:"Octavos", desc:"W Suiza/Argelia vs W Colombia/Ghana",     estadio:"BC Place, Vancouver" },                    // mar 7/7 17:00
+  // Cuartos (fuente FIFA oficial)
+  { uid:"r25", s:"20260709T170000", e:"20260709T190000", label:"Cuartos", desc:"W Octavos 89 vs W Octavos 90",  estadio:"Gillette Stadium, Boston" },        // jue 9/7 17:00
+  { uid:"r26", s:"20260710T160000", e:"20260710T180000", label:"Cuartos", desc:"W Octavos 93 vs W Octavos 94",  estadio:"SoFi Stadium, Los Angeles" },       // vie 10/7 16:00
+  { uid:"r27", s:"20260711T180000", e:"20260711T200000", label:"Cuartos", desc:"W Octavos 91 vs W Octavos 92",  estadio:"Hard Rock Stadium, Miami" },        // sab 11/7 18:00
+  { uid:"r28", s:"20260711T220000", e:"20260712T000000", label:"Cuartos", desc:"W Octavos 95 vs W Octavos 96",  estadio:"Arrowhead Stadium, Kansas City" },  // sab 11/7 22:00
+  // Semis (fuente FIFA oficial)
+  { uid:"r29", s:"20260714T160000", e:"20260714T180000", label:"SEMIFINAL", desc:"W Cuartos 97 vs W Cuartos 98", estadio:"AT&T Stadium, Dallas" },           // mar 14/7 16:00
+  { uid:"r30", s:"20260715T160000", e:"20260715T180000", label:"SEMIFINAL", desc:"W Cuartos 99 vs W Cuartos 100",estadio:"Mercedes-Benz Stadium, Atlanta" }, // mie 15/7 16:00
   // 3er puesto y Final
-  { uid:"r32", s:"20260718T180000", e:"20260718T200000", label:"Tercer Puesto", desc:"Perdedor Semi1 vs Perdedor Semi2", estadio:"Hard Rock Stadium, Miami" },    // sab 18 jul 18:00
-  { uid:"r33", s:"20260719T160000", e:"20260719T180000", label:"FINAL MUNDIAL 2026", desc:"Campeones Semi1 vs Semi2",    estadio:"MetLife Stadium, Nueva Jersey" }, // dom 19 jul 16:00
+  { uid:"r32", s:"20260718T180000", e:"20260718T200000", label:"Tercer Puesto",      desc:"Perdedor Semi1 vs Perdedor Semi2", estadio:"Hard Rock Stadium, Miami" },    // sab 18/7 18:00
+  { uid:"r33", s:"20260719T160000", e:"20260719T180000", label:"FINAL MUNDIAL 2026", desc:"Campeones Semi1 vs Semi2",         estadio:"MetLife Stadium, Nueva Jersey" }, // dom 19/7 16:00
 ];
 
 function esc(s) {
@@ -161,14 +163,15 @@ module.exports = async function(req, res) {
   for (const p of ELIMINATORIOS) {
     const esFinal = p.label.includes('FINAL MUNDIAL');
     const isSemi = p.label.includes('SEMIFINAL');
-    const emoji = esFinal ? '🏆 ' : isSemi ? '🔥 ' : '⚽ ';
+    const isArg = p.arg;
+    const emoji = esFinal ? '🏆 ' : isSemi ? '🔥 ' : isArg ? '🇦🇷 ' : '⚽ ';
     L('BEGIN:VEVENT');
     L(`UID:m26-${p.uid}@mundial2026ical`);
     L(`DTSTART;TZID=America/Argentina/Buenos_Aires:${p.s}`);
     L(`DTEND;TZID=America/Argentina/Buenos_Aires:${p.e}`);
     L(`SUMMARY:${esc(`${emoji}${p.label}: ${p.desc}`)}`);
     L(`LOCATION:${esc(p.estadio)}`);
-    L(`DESCRIPTION:${esc(p.label)}\\nCruce: ${esc(p.desc)}\\nEstadio: ${esc(p.estadio)}`);
+    L(`DESCRIPTION:${esc(p.label)}\\nPartido: ${esc(p.desc)}\\nEstadio: ${esc(p.estadio)}`);
     L('END:VEVENT');
   }
 
